@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:51:52 +0100] "GET /GestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:51:54 +0100] "GET /GestionProjet/ HTTP/1.1" 200 1976
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:51:54 +0100] "GET /favicon.ico HTTP/1.1" 404 604
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:52:16 +0100] "POST /GestionProjet/RegisterServlet HTTP/1.1" 404 714
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:59:04 +0100] "GET /GestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:59:06 +0100] "GET /GestionProjet/ HTTP/1.1" 200 3012
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:59:06 +0100] "GET /GestionProjet/images/3d-character.png HTTP/1.1" 404 726
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:14:59:06 +0100] "GET /GestionProjet/css/style.css HTTP/1.1" 404 716
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:13:27 +0100] "GET /GestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:13:29 +0100] "GET /GestionProjet/ HTTP/1.1" 200 2941
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:13:29 +0100] "GET /GestionProjet/css/style.css HTTP/1.1" 404 716
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:13:29 +0100] "GET /t%C3%A9l%C3%A9charg%C3%A9%20(16).jpg HTTP/1.1" 404 604
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:14:21 +0100] "GET /GestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:14:23 +0100] "GET /GestionProjet/ HTTP/1.1" 200 2940
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:14:23 +0100] "GET /GestionProjet/css/style.css HTTP/1.1" 404 716
+0:0:0:0:0:0:0:1 - - [17/Mar/2025:15:14:23 +0100] "GET /GestionProjet/t%C3%A9l%C3%A9charg%C3%A9%20(16).jpg HTTP/1.1" 200 56408
