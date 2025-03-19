@@ -1,14 +1,13 @@
 package DAO;
 
-import Model.Projet;
-import DAO.DBconnexion;
+import Model.ProjetModel;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProjetDAO {
-    public void ajouterProjet(Projet projet) {
+    public void ajouterProjet(ProjetModel projet) {
         String sql = "INSERT INTO Projet (nom, description, date_debut, date_fin) VALUES (?, ?, ?, ?)";
         try (Connection conn = DBconnexion.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -22,20 +21,21 @@ public class ProjetDAO {
         }
     }
 
-    public List<Projet> listerProjets() {
-        List<Projet> projets = new ArrayList<>();
-        String sql = "SELECT * FROM Projet";
+
+
+    public List<ProjetModel> listerProjets() {
+        List<ProjetModel> projets = new ArrayList<>();
+        String query = "SELECT * FROM projet";
         try (Connection conn = DBconnexion.getConnection();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
+             PreparedStatement ps = conn.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                projets.add(new Projet(
-                        rs.getInt("id"),
-                        rs.getString("nom"),
-                        rs.getString("description"),
-                        rs.getString("date_debut"),
-                        rs.getString("date_fin")
-                ));
+                ProjetModel projet = new ProjetModel();
+                projet.setNom(rs.getString("nom"));
+                projet.setDescription(rs.getString("description"));
+                projet.setDateDebut(String.valueOf(rs.getDate("date_debut")));
+                projet.setDateFin(String.valueOf(rs.getDate("date_fin")));
+                projets.add(projet);
             }
         } catch (SQLException e) {
             e.printStackTrace();

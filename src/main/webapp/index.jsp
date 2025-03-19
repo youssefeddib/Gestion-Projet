@@ -13,7 +13,7 @@
         /* Style général */
         body {
             font-family: 'Roboto', sans-serif;
-            background: url('https://i.pinimg.com/736x/d0/73/4d/d0734dfa4be312afc59ea8b787ebcc25.jpg') no-repeat center center fixed;
+            background: url('https://i.pinimg.com/736x/7a/1c/c4/7a1cc44e8356752747500a5271cd4325.jpg') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             overflow: hidden;
@@ -126,7 +126,7 @@
 <!-- Connexion -->
 <div id="connexion" class="container-box section">
     <h2>CONNEXION</h2>
-    <form action="ConnexionServlet" method="post">
+    <form action="gestionProjet" method="post">
         <div class="mb-3">
             <label for="emailLogin" class="form-label">EMAIL</label>
             <input type="email" class="form-control" id="emailLogin" name="email" required>

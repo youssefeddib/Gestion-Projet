@@ -85,3 +85,12 @@
 0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:03:58 +0100] "GET /GestionProjet/img.png HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:05:48 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
 0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:05:48 +0100] "GET /GestionProjet/img.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:30:40 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5668
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:30:40 +0100] "GET /GestionProjet/img.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:32:03 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:33:13 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:34:26 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:34:52 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:34:52 +0100] "GET /GestionProjet/img.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:35:28 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
+0:0:0:0:0:0:0:1 - - [18/Mar/2025:15:36:31 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5628
