@@ -135,6 +135,10 @@
                 <p><strong>Date de début:</strong> <%= projet.getDateDebut() %></p>
                 <p><strong>Date de fin:</strong> <%= projet.getDateFin() %></p>
             </div>
+            <form action="gestionProjet" method="POST">
+                <input type="hidden" name="id" value="<%= projet.getNom() %>" />
+                <button type="submit" name="action" value="delete">Supprimer</button>
+            </form>
         </div>
         <%
                 }

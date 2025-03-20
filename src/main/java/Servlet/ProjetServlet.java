@@ -17,7 +17,7 @@ public class ProjetServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        projetDAO = new ProjetDAO();  // Initialisation de l'objet DAO pour interagir avec la base de données
+        projetDAO = new ProjetDAO();
     }
 
     @Override
@@ -30,7 +30,7 @@ public class ProjetServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Ajouter un nouveau projet
+
         String nom = request.getParameter("nom");
         String description = request.getParameter("description");
         String dateDebut = request.getParameter("date_debut");
@@ -41,4 +41,22 @@ public class ProjetServlet extends HttpServlet {
 
         response.sendRedirect(request.getContextPath() + "/gestionProjet");
     }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String projetId = request.getParameter("id");
+
+        if (projetId != null) {
+            try {
+                int id = Integer.parseInt(projetId);
+                projetDAO.supprimerProjet(id);
+                response.setStatus(HttpServletResponse.SC_OK); // OK status code
+            } catch (NumberFormatException e) {
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid project ID");
+            }
+        } else {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Project ID is missing");
+        }
+    }
 }
+

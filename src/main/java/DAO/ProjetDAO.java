@@ -21,6 +21,16 @@ public class ProjetDAO {
         }
     }
 
+    public void supprimerProjet(int id) {
+        String sql = "DELETE FROM projets WHERE id = ?";
+
+        try (Connection conn = DBconnexion.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 
     public List<ProjetModel> listerProjets() {
