@@ -13,7 +13,7 @@
         /* Style général */
         body {
             font-family: 'Roboto', sans-serif;
-            background: url('https://i.pinimg.com/736x/7a/1c/c4/7a1cc44e8356752747500a5271cd4325.jpg') no-repeat center center fixed;
+            background: url('https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             overflow: hidden;
@@ -46,7 +46,7 @@
             transform: translateY(-50%);
             background: white;
             padding: 40px;
-            border-radius: 10px;
+            border-radius: 50px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: 400px;
             text-align: center;

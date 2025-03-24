@@ -1,12 +1,29 @@
+<%@ page import="Model.ProjetModel" %>
+<%@ page import="DAO.ProjetDAO" %>
+<%@ page import="java.util.List" %>
+
+<%
+    // Récupérer l'ID du projet à modifier depuis la requête
+    String modifierParam = request.getParameter("modifier");
+    int idpr = (modifierParam != null) ? Integer.parseInt(modifierParam) : -1; // Default to -1 if invalid ID
+    ProjetDAO pr = new ProjetDAO();
+
+    ProjetModel projet = null;
+    if (idpr != -1) {
+        projet = pr.getProjetById(idpr);
+    }
+%>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter un Projet</title>
+    <title>Modifier un Projet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+
         body {
             font-family: 'Roboto', sans-serif;
             background: url('https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
@@ -65,15 +82,6 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="btn btn-outline-dark me-2" href="#">ACCUEIL</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-dark me-2" href="#">INSCRIRE</a>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-outline-dark me-2" href="#">CONNEXION</a>
-                </li>
-                <li class="nav-item">
                     <a class="btn btn-outline-dark me-2" href="/GestionProjet/gestionProjet">Liste Projets</a>
                 </li>
             </ul>
@@ -84,30 +92,40 @@
 <!-- Formulaire -->
 <div class="form-wrapper">
     <div class="form-container">
-        <h3 class="mb-4 fw-bold">Ajouter un Projet</h3>
-        <form action="gestionProjet?action=add" method="post">
+        <h3 class="mb-4 fw-bold">Modifier un Projet</h3>
+
+        <% if (projet != null) { %>
+        <form action="gestionProjet?action=edit" method="post">
+            <input type="hidden" name="id" value="<%= projet.getId() %>">
+
             <div class="mb-3">
-                <p><strong>Nom de Projet</strong></p>
-                <input type="text" class="form-control" name="nom" placeholder="Nom de Projet" required>
+                <p><strong>Nom du Projet</strong></p>
+                <input type="text" class="form-control" name="nom" value="<%= projet.getNom() %>" required>
             </div>
+
             <div class="mb-3">
                 <p><strong>Description</strong></p>
-                <input type="text" class="form-control" name="description" placeholder="Description" required>
+                <input type="text" class="form-control" name="description" value="<%= projet.getDescription() %>" required>
             </div>
+
             <div class="mb-3">
-                <p><strong>Date_Debut</strong></p>
-                <input type="date" class="form-control" name="date_debut" required>
+                <p><strong>Date de Début</strong></p>
+                <input type="date" class="form-control" name="date_debut" value="<%= projet.getDateDebut() %>" required>
             </div>
+
             <div class="mb-3">
-                <p><strong>Date_Fin</strong></p>
-                <input type="date" class="form-control" name="date_fin" required>
+                <p><strong>Date de Fin</strong></p>
+                <input type="date" class="form-control" name="date_fin" value="<%= projet.getDateFin() %>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Ajouter</button>
+
+            <button type="submit" class="btn btn-primary">Modifier</button>
         </form>
+        <% } else { %>
+        <p class="text-center text-danger">Le projet demandé n'existe pas.</p>
+        <% } %>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

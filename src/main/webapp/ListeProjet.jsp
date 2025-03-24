@@ -18,11 +18,10 @@
     <title>Liste des Projets</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: url('https://i.pinimg.com/736x/7a/1c/c4/7a1cc44e8356752747500a5271cd4325.jpg') no-repeat center center fixed;
+            background: url('https://images.pexels.com/photos/585418/pexels-photo-585418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
         }
@@ -39,26 +38,38 @@
         }
 
         .project-container {
-            background: rgba(255, 255, 255, 0.42);
+
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 800px;
+            max-width: 1100px;
             margin: auto;
             margin-top: 50px;
+
         }
 
         .card {
-            border-radius: 10px;
+            border-radius: 15px;
             transition: transform 0.2s;
+            background: rgba(255, 255, 255, 0.42);
+            backdrop-filter: blur(10px);
+            border: none;
+
         }
+        .card img {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            border-radius: 15px;
+
         .card:hover {
             transform: scale(1.05);
         }
 
-        .btn-danger {
-            width: 100%;
+        .btn-group {
+
+            margin: auto;
+            gap: 20px;
         }
     </style>
 </head>
@@ -92,13 +103,23 @@
             for (ProjetModel projet : projets) { %>
         <div class="col-md-4">
             <div class="card p-3 mb-4 shadow-sm">
-                <h5 class="text-primary"><%= projet.getNom() %></h5>
+                <img src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project Icon">
+                <h5 class="text-warning text-center" ><%= projet.getNom() %></h5>
                 <p><strong>Description:</strong> <%= projet.getDescription() %></p>
-                <p>📅 <strong>Debut:</strong> <%= projet.getDateDebut() %> | <strong>Fin:</strong> <%= projet.getDateFin() %></p>
-                <form action="gestionProjet" method="post">
+                <strong>Date_Debut:</strong> <%= projet.getDateDebut() %>
+                 <strong>Date_Fin:</strong> <%= projet.getDateFin() %>
+                <div class="btn-group">
+
+                <form action="ModifierProjet.jsp" method="post">
+                    <input type="hidden" name="modifier" value="<%= projet.getId() %>">
+                    <button type="submit" class="btn btn-primary">Modifier</button>
+                </form>
+
+                    <form action="gestionProjet?action=delete" method="post">
                     <input type="hidden" name="supprimer" value="<%= projet.getId() %>">
                     <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
+                </div>
             </div>
         </div>
         <% }
