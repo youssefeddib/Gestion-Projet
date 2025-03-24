@@ -1,152 +1,94 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.List" %>
-<%@ page import="Model.ProjetModel" %>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion des Projets</title>
+    <title>Ajouter un Projet</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f8f9fa;
+            background: url('https://i.pinimg.com/736x/7a/1c/c4/7a1cc44e8356752747500a5271cd4325.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
         }
-
-        .container-box {
-            max-width: 900px;
-            margin: 50px auto;
-            background: #fff;
+        .navbar {
+            background: rgba(255, 255, 255, 0.42);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-brand {
+            font-family: 'Roboto', serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: black !important;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.42);
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #007bff;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .form-container {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        .form-container h3 {
-            color: #007bff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .form-control {
-            border-radius: 8px;
-            padding: 12px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            border-radius: 20px;
-            font-weight: bold;
-            padding: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 100%;
-            margin-top: 20px;
+            max-width: 450px;
+            text-align: center;
         }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        .project-card {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        .project-card h5 {
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-
-        .project-card p {
-            color: #333;
-        }
-
-        .row .col-md-4 {
-            margin-bottom: 30px;
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px);
         }
     </style>
 </head>
 <body>
 
-<!-- Gestion des projets -->
-<div id="gestion" class="container-box section active">
-    <h2>Gestion des Projets</h2>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+        <img style="width: 70px; height: 70px;" src="img.png">
+        <a class="navbar-brand text-dark" href="#">ConstructionXpert</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark me-2" href="#">ACCUEIL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark me-2" href="#">INSCRIRE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark" href="#">CONNEXION</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-    <!-- Formulaire d'ajout d'un projet -->
+<!-- Formulaire -->
+<div class="form-wrapper">
     <div class="form-container">
-        <h3>Ajouter un nouveau projet</h3>
+        <h3 class="mb-4 fw-bold">Ajouter un Projet</h3>
         <form action="gestionProjet" method="post">
             <div class="mb-3">
-                <label for="nom" class="form-label">Nom du projet</label>
-                <input type="text" class="form-control" id="nom" name="nom" required>
+                <input type="text" class="form-control" name="nom" placeholder="Nom de Projet" required>
             </div>
-
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="description" required></textarea>
+                <input type="text" class="form-control" name="description" placeholder="Description" required>
             </div>
-
             <div class="mb-3">
-                <label for="date_debut" class="form-label">Date de début</label>
-                <input type="date" class="form-control" id="date_debut" name="date_debut" required>
+                <input type="date" class="form-control" name="date_debut" required>
             </div>
-
             <div class="mb-3">
-                <label for="date_fin" class="form-label">Date de fin</label>
-                <input type="date" class="form-control" id="date_fin" name="date_fin" required>
+                <input type="date" class="form-control" name="date_fin" required>
             </div>
-
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
-    </div>
-
-    <!-- Liste des projets -->
-    <h3>Liste des projets</h3>
-    <div class="row">
-        <%
-            // Récupérer l'objet projets depuis la requête
-            List<ProjetModel> projets = (List<ProjetModel>) request.getAttribute("projets");
-            if (projets != null) {
-                for (ProjetModel projet : projets) {
-        %>
-        <div class="col-md-4">
-            <div class="project-card">
-                <h5><%= projet.getNom() %></h5>
-                <p><strong>Description:</strong> <%= projet.getDescription() %></p>
-                <p><strong>Date de début:</strong> <%= projet.getDateDebut() %></p>
-                <p><strong>Date de fin:</strong> <%= projet.getDateFin() %></p>
-            </div>
-            <form action="gestionProjet" method="POST">
-                <input type="hidden" name="id" value="<%= projet.getNom() %>" />
-                <button type="submit" name="action" value="delete">Supprimer</button>
-            </form>
-        </div>
-        <%
-                }
-            }
-        %>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

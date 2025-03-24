@@ -85,11 +85,17 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('home')">ACCUEIL</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('inscription')">INSCRIRE</a></li>
-                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('connexion')">CONNEXION</a></li>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark me-2" href="#">ACCUEIL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark me-2" href="#">INSCRIRE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-dark" href="#">CONNEXION</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -126,7 +132,7 @@
 <!-- Connexion -->
 <div id="connexion" class="container-box section">
     <h2>CONNEXION</h2>
-    <form action="gestionProjet" method="post">
+    <form action="Projet.jsp" method="post">
         <div class="mb-3">
             <label for="emailLogin" class="form-label">EMAIL</label>
             <input type="email" class="form-control" id="emailLogin" name="email" required>

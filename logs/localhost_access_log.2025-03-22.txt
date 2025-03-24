@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:15:17:44 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 500 1500
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:15:25:17 +0100] "GET /GestionProjet/Projet.jsp HTTP/1.1" 200 3574
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:15:25:17 +0100] "GET /GestionProjet/img.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:15:25:23 +0100] "GET /GestionProjet/Projet.jsp HTTP/1.1" 200 3574
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:45:04 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 500 1500
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:56:49 +0100] "GET /GestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:56:52 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5698
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:57:01 +0100] "POST /GestionProjet/Projet.jsp HTTP/1.1" 200 3574
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:57:07 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:57:08 +0100] "GET /GestionProjet/gestionProjet HTTP/1.1" 200 16027
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:57:13 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 400 706
+0:0:0:0:0:0:0:1 - - [22/Mar/2025:23:57:27 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 400 706

@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:14 +0100] "GET /GestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:15 +0100] "GET /GestionProjet/ HTTP/1.1" 200 5698
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:15 +0100] "GET /GestionProjet/img.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:23 +0100] "POST /GestionProjet/Projet.jsp HTTP/1.1" 200 3574
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:28 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:28 +0100] "GET /GestionProjet/gestionProjet HTTP/1.1" 200 19723
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:38 +0100] "GET /GestionProjet/Projet.jsp HTTP/1.1" 200 3574
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:44 +0100] "POST /GestionProjet/gestionProjet HTTP/1.1" 400 706
+0:0:0:0:0:0:0:1 - - [24/Mar/2025:02:59:53 +0100] "GET /GestionProjet/Projet.jsp HTTP/1.1" 200 3574
